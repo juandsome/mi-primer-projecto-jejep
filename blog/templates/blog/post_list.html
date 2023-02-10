@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <div style="text-align:center;"> <h1> lista de posts jejep</h1>
-    {% for post in posts %}
+{% extends 'blog/base.html' %}
+{% block content %}
+
+{% for post in posts %}
     <div>
         <p> publicado: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
+        <h2><a href="{%url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endfor %}
-    </div>
-
-</head>
-<body>
-
-</body>
-</html>
+{% endblock %}
