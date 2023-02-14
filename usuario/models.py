@@ -25,7 +25,7 @@ class UsuarioManager(BaseUserManager):
 
 
         )
-
+#listo el llopo
         usuario.save()
         return usuario
 
